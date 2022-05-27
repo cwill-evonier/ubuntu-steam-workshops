@@ -28,11 +28,15 @@ Press `[CTRL]+[C]` for exiting the script.
 - The script must be run when Steam is NOT running.
 - Create a backup of your workshop-directory once before running this script
 
-# Update Workshops
+## Update Workshops
 
 In order to update workshops start Steam WITHOUT this script. Once workshop-files are updated, quit Steam and run this script again.
 
 ## Dev-Notes:
-Inspired by this post:
-https://forums.civfanatics.com/threads/linux-ubuntu-18-04-summer-patch-mods-cqui.639638/
+
+This script:
+- is inspired by: https://forums.civfanatics.com/threads/linux-ubuntu-18-04-summer-patch-mods-cqui.639638/
+- creates a backup of the current Steam-workshop in a temporary directory provided by Ubuntu
+- removes the Workshop-files, creates a FAT32-Image in Steam's Workshop-directory, and copies origin Workshop-files into this image
+- on exit, it reverts the FAT32-Image and replaces the Workshop-directory with its orig content
 
